@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons - Our Church</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Sermons</h1>
+
+        <section id="sermon-filters">
+            <h2>Filter Sermons</h2>
+            <form>
+                <label for="sermon-search">Search:</label>
+                <input type="text" id="sermon-search" name="sermon-search" placeholder="Search by title, speaker...">
+
+                <label for="sermon-speaker">Speaker:</label>
+                <select id="sermon-speaker" name="sermon-speaker">
+                    <option value="">All Speakers</option>
+                    <option value="pastor1">Pastor 1</option>
+                    <option value="pastor2">Pastor 2</option>
+                    <option value="guest">Guest Speaker</option>
+                </select>
+
+                <label for="sermon-series">Series:</label>
+                <select id="sermon-series" name="sermon-series">
+                    <option value="">All Series</option>
+                    <option value="series1">Series 1</option>
+                    <option value="series2">Series 2</option>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
+        </section>
+
+        <section id="sermon-list">
+            <h2>Recent Sermons</h2>
+            <ul>
+                <li>
+                    <h3>Sermon Title 1</h3>
+                    <p>Speaker: Pastor John Doe</p>
+                    <p>Date: YYYY-MM-DD</p>
+                    <p>Series: Faith Journey</p>
+                    <a href="#">Listen/Watch</a>
+                </li>
+                <li>
+                    <h3>Sermon Title 2</h3>
+                    <p>Speaker: Pastor Jane Smith</p>
+                    <p>Date: YYYY-MM-DD</p>
+                    <p>Series: Living by Grace</p>
+                    <a href="#">Listen/Watch</a>
+                </li>
+                <li>
+                    <h3>Sermon Title 3</h3>
+                    <p>Speaker: Guest Speaker Name</p>
+                    <p>Date: YYYY-MM-DD</p>
+                    <p>Series: Special Event</p>
+                    <a href="#">Listen/Watch</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 Our Church Name. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
