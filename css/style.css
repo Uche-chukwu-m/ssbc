@@ -1,0 +1,12 @@
+/* Placeholder CSS */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4; /* Default background */
+}
+
+/* Basic responsive design: change background on smaller screens */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: #e0e0e0; /* Lighter gray for smaller screens */
+    }
+}
