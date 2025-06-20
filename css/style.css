@@ -1,12 +1,235 @@
-/* Placeholder CSS */
-body {
-    font-family: sans-serif;
-    background-color: #f4f4f4; /* Default background */
+/* Basic CSS Reset */
+html {
+  box-sizing: border-box;
 }
 
-/* Basic responsive design: change background on smaller screens */
-@media screen and (max-width: 600px) {
-    body {
-        background-color: #e0e0e0; /* Lighter gray for smaller screens */
-    }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none; /* Remove default list styling */
+}
+
+img {
+  max-width: 100%;
+  height: auto; /* Make images responsive by default */
+}
+/* End Basic CSS Reset */
+
+:root {
+  --bg-color: #F9F9F9; /* Off-white background */
+  --text-color: #333333; /* Dark grey text */
+  --primary-accent-color: #4A708B; /* Desaturated blue for links/accents */
+  --secondary-accent-color: #B08D57; /* Muted gold for subtle highlights - use sparingly */
+  --border-color: #DDDDDD; /* Light grey for borders */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif; /* Default body font */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif; /* Serif font for headings */
+  color: var(--text-color); /* Or a slightly darker shade if needed */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: var(--primary-accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) { /* Common breakpoint for tablets and larger phones */
+  nav ul {
+    display: block; /* If it was inline-block, allow it to be block to fill width */
+    width: 100%; /* Ensure it takes full width if needed */
+  }
+
+  nav li {
+    display: block; /* Stack navigation items vertically */
+    margin: 0.8em 0; /* Adjust margin for vertical spacing */
+    text-align: center; /* Center the text of nav items */
+  }
+
+  nav a {
+    display: block; /* Make the entire link area tappable */
+    padding: 0.8em 1em; /* Increase padding for easier tapping */
+    border-bottom: 1px solid var(--border-color); /* Add separator lines */
+  }
+
+  nav a:hover,
+  nav a:focus {
+    border-bottom-color: var(--primary-accent-color); /* Keep hover effect consistent */
+    background-color: #f0f0f0; /* Slight background change on tap/hover for mobile */
+  }
+
+  /* Adjust main content padding if needed */
+  main {
+    padding: 1.5em 1em;
+  }
+
+  section h2 {
+    font-size: 1.6em; /* Slightly smaller section titles on mobile */
+  }
+
+  .sermon-item h3, .event-item h3 {
+    font-size: 1.3em; /* Slightly smaller item titles */
+  }
+}
+
+@media (max-width: 480px) { /* Common breakpoint for smaller phones */
+  /* Further adjustments for very small screens if needed */
+  h1 { /* Example: Main site title if we had one, or adjust first prominent heading */
+    font-size: 2em; /* Adjust base font size for main headings */
+  }
+  
+  /* Reduce padding further on very small screens */
+  main {
+    padding: 1em 0.8em;
+  }
+
+  nav a {
+    padding: 0.7em 0.8em; /* Slightly less padding if space is very tight */
+  }
+}
+
+/* Header and Navigation Styles */
+header {
+  background-color: var(--bg-color); /* Or a slightly different shade if desired, e.g., white */
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center; /* Center the nav if it's inline-block */
+}
+
+nav ul {
+  /* list-style: none; /* Already in reset */
+  /* padding: 0; /* Already in reset */
+  /* margin: 0; /* Already in reset */
+  display: inline-block; /* Allows centering the ul if header is text-align: center */
+}
+
+nav li {
+  display: inline-block; /* Arrange menu items in a line */
+  margin: 0 1em; /* Space out menu items */
+}
+
+nav a {
+  font-family: 'Open Sans', sans-serif; /* Ensure nav uses body font or a specific nav font */
+  font-weight: 600; /* Slightly bolder for emphasis */
+  color: var(--text-color); /* Use main text color for a more subdued look */
+  padding: 0.5em 0;
+  text-decoration: none;
+  border-bottom: 2px solid transparent; /* For a subtle hover effect */
+  transition: border-bottom-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus { /* Added :focus for accessibility */
+  color: var(--primary-accent-color);
+  border-bottom-color: var(--primary-accent-color); /* Highlight on hover/focus */
+  text-decoration: none; /* Ensure no underline from default 'a:hover' */
+}
+
+/* Main Content Styles */
+main {
+  display: block; /* Ensure it behaves as a block element */
+  max-width: 960px; /* Or another suitable width like 800px or 1100px */
+  margin: 0 auto; /* Center the main content area */
+  padding: 2em 1.5em; /* Vertical and horizontal padding */
+}
+
+section {
+  margin-bottom: 2.5em; /* Space out sections */
+  padding-bottom: 1.5em; /* Padding within the section before the margin */
+  /* border-top: 1px solid var(--border-color); /* Optional: if more separation is needed */
+}
+
+section:first-of-type {
+   border-top: none; /* Optional: remove top border for the very first section */
+}
+
+section h2 { /* Assuming sections are typically introduced by an h2 */
+  font-size: 1.8em; /* Or adjust as per visual hierarchy */
+  color: var(--text-color); /* Could be a slightly different shade from primary text if desired */
+  margin-bottom: 0.8em;
+  /* border-bottom: 1px solid var(--border-color); /* Optional: if titles need an underline */
+  /* padding-bottom: 0.3em; /* Optional: space for the underline */
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.7; /* Slightly more line height for body paragraphs for readability */
+}
+
+/* Styling for lists within main content, if needed beyond reset */
+/* For example, if you want default disc/decimal styling back for content lists */
+/* main ul, main ol { */
+    /* list-style: initial; /* This would bring back default browser list styles */
+    /* margin-left: 1.5em; /* Indent lists */
+    /* padding-left: 0.5em; /* Small padding for list items */
+/* } */
+
+main ul li, main ol li {
+    margin-bottom: 0.5em; /* Space out list items */
+}
+
+/* Example for sermon or event item placeholders if they are in divs/articles */
+.sermon-item, .event-item { /* Assuming we might add these classes to placeholder divs */
+  border: 1px solid var(--border-color);
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+  background-color: #FFFFFF; /* Slightly different background if main bg is off-white */
+  border-radius: 3px; /* Subtle rounded corners */
+}
+
+.sermon-item h3, .event-item h3 { /* Assuming item titles are h3 */
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--bg-color); /* Consistent with header or a slightly different shade */
+  padding: 2em 1.5em; /* Padding above/below and side */
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.9em; /* Slightly smaller text */
+  color: var(--text-color); /* Or a slightly lighter shade of text-color for less emphasis */
+}
+
+footer p {
+  margin-bottom: 0.5em; /* Space out paragraphs in footer if there are multiple */
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* If social media links were actual <a> tags inside the footer: */
+footer a {
+  color: var(--primary-accent-color); /* Use accent color for links */
+  text-decoration: none;
+  margin: 0 0.5em; /* Space out social media links if they are inline */
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
 }
